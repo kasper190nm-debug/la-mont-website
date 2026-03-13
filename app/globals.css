@@ -1,0 +1,60 @@
+@import "tailwindcss";
+
+/* Tell Tailwind where to scan for class names (required with Turbopack) */
+@source ".";
+@source "../components";
+
+@theme {
+  --color-gold: #C8A96E;
+  --color-dark: #141414;
+  --color-off-white: #F8F8F6;
+  --color-near-black: #1A1A1A;
+}
+
+:root {
+  --background: #F8F8F6;
+  --foreground: #1A1A1A;
+  --gold: #C8A96E;
+  --dark: #141414;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-inter), system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.font-playfair {
+  font-family: var(--font-playfair), Georgia, serif;
+}
+
+/* Fade-in animation base state */
+.fade-in {
+  opacity: 0;
+  transform: translateY(2rem);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Staggered delay helpers */
+.delay-100 { transition-delay: 100ms; }
+.delay-200 { transition-delay: 200ms; }
+.delay-300 { transition-delay: 300ms; }
+.delay-400 { transition-delay: 400ms; }
+.delay-500 { transition-delay: 500ms; }
